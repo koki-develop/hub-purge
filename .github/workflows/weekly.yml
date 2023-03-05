@@ -1,0 +1,12 @@
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 15 * * 1' # 毎週月曜日 0 時
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: koki-develop/hub-purge-action@v1
+        with:
+          repository: koki-develop/clive
